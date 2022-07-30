@@ -1,0 +1,75 @@
+@use "../globals/variables" as v;
+@use "../abstracts/breakpoints" as b;
+@use "../abstracts/functions" as f;
+
+.container {
+  width: 100%;
+  min-width: 375px;
+  padding: f.em(66) 0;
+  background: v.$neut__cream;
+  min-height: 95vh;
+
+  @include b.mq-up(medium) {
+    padding: f.em(98) 0 f.em(66);
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+  background: white;
+  border-radius: f.rem(16);
+  padding: f.rem(24) f.rem(22);
+
+  @include b.mq-up(medium) {
+    max-width: f.em(550);
+  }
+}
+
+.header {
+  background: v.$pri__soft-red;
+  margin-bottom: f.rem(22);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &__text {
+    & p {
+      color: hsla(27, 66%, 92%, 0.824);
+      font-weight: 400;
+      padding: 0 0 f.rem(10);
+      margin-bottom: 0;
+    }
+
+    & h2 {
+      margin: 0;
+      color: v.$neut__vp-orange;
+      font-weight: 700;
+    }
+  }
+
+  .circle {
+    &__black {
+      background: #000;
+      padding: f.rem(20);
+      border-radius: 50%;
+      position: absolute;
+      right: 10%;
+      bottom: 30%;
+    }
+    &__transparent {
+      border: 2px solid v.$neut__vp-orange;
+      padding: f.rem(18);
+      border-radius: 50%;
+      position: absolute;
+      right: 15%;
+      bottom: 30%;
+
+      @include b.mq-up(medium) {
+        right: 13%;
+      }
+    }
+  }
+}

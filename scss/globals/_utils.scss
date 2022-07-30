@@ -1,0 +1,51 @@
+@use "./variables" as v;
+@use "../abstracts/breakpoints" as b;
+@use "../abstracts/functions" as f;
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.align {
+  align-items: center;
+}
+
+.justify {
+  justify-content: center;
+}
+
+.mon {
+  height: f.em(52);
+  background: v.$pri__soft-red;
+  // padding-top: f.em(48);
+}
+.tue {
+  height: f.em(104);
+  background: v.$pri__soft-red;
+}
+.wed {
+  height: f.em(156);
+  background: v.$pri__cyan;
+}
+.thu {
+  height: f.em(130);
+  background: v.$pri__soft-red;
+}
+.fri {
+  height: f.em(117);
+  background: v.$pri__soft-red;
+}
+.sat {
+  height: f.em(145);
+  background: v.$pri__soft-red;
+}
+.sun {
+  height: f.em(125);
+  background: v.$pri__soft-red;
+}

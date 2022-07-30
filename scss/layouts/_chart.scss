@@ -1,0 +1,94 @@
+@use "../globals/variables" as v;
+@use "../abstracts/breakpoints" as b;
+@use "../abstracts/functions" as f;
+
+.chart {
+  margin: f.em(51) 0 f.em(64);
+  height: f.em(190);
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
+
+  &__bar-wrapper {
+    width: f.em(52);
+    cursor: pointer;
+
+    &:hover .chart__amount {
+      display: block;
+    }
+
+    &:hover .chart__bar {
+      opacity: 0.7;
+    }
+  }
+
+  &__amount {
+    background: #000;
+    padding: f.em(8);
+    margin: 0 0 f.em(16) f.em(-16);
+    border-radius: f.em(4);
+    display: none;
+    width: f.em(76);
+
+    > p {
+      color: v.$neut__vp-orange;
+      margin: 0;
+    }
+  }
+
+  &__bar {
+    border-radius: f.em(4);
+  }
+
+  &__bar-wrapper:not(:last-child) {
+    margin-right: f.em(16);
+  }
+
+  &__bar::after {
+    content: attr(data-day);
+    color: v.$neut__medium-brown;
+    position: absolute;
+    bottom: -15%;
+    font-size: f.rem(14);
+    padding-left: f.em(4);
+
+    @include b.mq-up(medium) {
+      padding-left: f.em(16);
+    }
+  }
+}
+
+.total {
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: f.em(36);
+  border-top: 1px solid hsla(28, 10%, 53%, 0.247);
+
+  &__this-month {
+    width: 40%;
+
+    > h5 {
+      color: v.$neut__medium-brown;
+      margin-bottom: f.em(12);
+    }
+
+    > p {
+      font-size: f.rem(24);
+    }
+  }
+
+  &__last-month {
+    width: 50%;
+    margin-bottom: 0;
+    text-align: right;
+
+    > h5 {
+      margin: 0;
+    }
+
+    > p {
+      color: v.$neut__medium-brown;
+      font-size: f.rem(16);
+    }
+  }
+}

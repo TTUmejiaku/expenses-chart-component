@@ -1,0 +1,13 @@
+@use "../abstracts/functions" as f;
+
+/***** colors *****/
+$pri__soft-red: hsl(10, 79%, 65%);
+$pri__cyan: hsl(186, 34%, 60%);
+$neut__dk-brown: hsl(25, 47%, 15%);
+$neut__medium-brown: hsl(28, 10%, 53%);
+$neut__cream: hsl(27, 66%, 92%);
+$neut__vp-orange: hsl(33, 100%, 98%);
+
+/**** fonts *****/
+$ff: "DM Sans", sans-serif;
+$fs: f.rem(18);
